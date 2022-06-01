@@ -1,1 +1,7 @@
-<app-action-bar></app-action-bar>
+<div class="content"> 
+<app-action-bar (numberChange)="testNumberChange($event)" [step]="5"></app-action-bar>
+<app-action-bar (numberChange)="testNumberChange($event)" [step]="10"></app-action-bar>
+<button type="button" (click)="testClick()">TestEventBinding</button>
+</div>
+
+<app-max-min-meter [minLabel]="appMinLabel" [maxLabel]="appMaxLabel"></app-max-min-meter>

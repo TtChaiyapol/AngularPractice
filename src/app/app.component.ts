@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-pratice';
+  appMinLabel = 'myAppMinLabel';
+  appMaxLabel = 'myAppMaxLabel';
+
+  testClick(){
+    console.log("Test EventBinding");
+  }
+
+  testNumberChange(value:number){
+    console.log("Test NumberChange from app action bar :"+value)
+  }
 }
