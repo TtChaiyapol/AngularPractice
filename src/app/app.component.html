@@ -1,7 +1,80 @@
-<div class="content"> 
-<app-action-bar (numberChange)="testNumberChange($event)" [step]="5"></app-action-bar>
-<app-action-bar (numberChange)="testNumberChange($event)" [step]="10"></app-action-bar>
-<button type="button" (click)="testClick()">TestEventBinding</button>
+<!-- <div class="content">
+  <app-action-bar
+    (numberChange)="testNumberChange($event)"
+    [step]="5"
+  ></app-action-bar>
+  <app-action-bar
+    (numberChange)="testNumberChange($event)"
+    [step]="10"
+  ></app-action-bar>
+  <button type="button" (click)="testClick()">TestEventBinding</button>
 </div>
 
-<app-max-min-meter [minLabel]="appMinLabel" [maxLabel]="appMaxLabel"></app-max-min-meter>
+<app-max-min-meter
+  [minLabel]="appMinLabel"
+  [maxLabel]="appMaxLabel"
+
+  (minChange)="doAppMinChange($event)"
+  (maxChange)="doAppMaxChange($event)"
+></app-max-min-meter>
+
+<app-sqaure-flex [divHeight]="sqaureHeight" [divWidth]="sqaureWidth"></app-sqaure-flex>
+<div>
+  width:
+  <button type="button" (click)="sqaureWidth=50">50px</button>
+  <button type="button" (click)="sqaureWidth=100">100px</button>
+  <button type="button" (click)="sqaureWidth=200">200px</button>
+</div> -->
+
+<!-- <app-action-bar
+  [(counter)]="appCounter"
+  [step]="10"
+></app-action-bar>
+<app-sqaure-flex [divWidth]="appCounter"></app-sqaure-flex> -->
+
+<!-- <div *ngIf="activate else elseTemplate">
+  <app-action-bar></app-action-bar>
+</div>
+<ng-template #elseTemplate>
+  <div>
+    activate now
+  </div>
+</ng-template>
+<button type="button" (click)="activate=true">Open</button>
+<button type="button" (click)="activate=false">Close</button> -->
+
+<!-- <app-action-bar [inputDisplay]="false"></app-action-bar>
+<app-action-bar [inputDisplay]="true"></app-action-bar> -->
+
+<!-- {{customerList[0]}}
+<ul>
+  <li *ngFor="let customer of customerList;let i=index ">{{customer}}
+    <button (click)="removeCustomer(i)">Delete</button>
+  </li>
+</ul>
+
+<button (click)="pushCustomer()">push</button>
+<button (click)="unshiftCustomer()">unshift</button>-->
+
+<!-- <app-test-request-get></app-test-request-get> -->
+
+<h5>Float Label</h5>
+<span class="p-float-label">
+    <input id="float-input" type="text" pInputText [(ngModel)]="value2"> 
+    <label for="float-input">Username</label>
+</span>
+
+<p-table [value]="cars">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Year</th>
+          <th>Brand</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car>
+      <tr>
+          <td>{{car.year}}</td>
+          <td>{{car.brand}}</td>
+      </tr>
+  </ng-template>
+</p-table>
