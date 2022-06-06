@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Product } from './shopping/model/product';
 
 @Component({
@@ -16,6 +17,15 @@ export class AppComponent {
   activate :boolean = false;  
   customerList: string[] = ['customer1', 'customer2', 'customer3', 'customer4']
   value2:string='Hello Primeng';
+
+  employeeCode='001';
+  employeeName='Chaiyapol';
+
+  weightForm = new FormControl(null,Validators.required);
+  heightForm = new FormControl(null,Validators.required);
+  bmi?: number;
+  info: string= '';
+  studyDate?:Date;
 
   cars = [
     {
@@ -70,8 +80,18 @@ export class AppComponent {
     { name: 'Watermelon' , description: 'ผลไม้' , price : 200}
   ];
 
+  calculate(){
+    if(this.weightForm.invalid || this.heightForm.invalid){
+      return ;
+    }
+    const wieght = this.weightForm.value;
+    const hieght = this.heightForm.value;
+
+    this.bmi = wieght / hieght ** 2;
+  }
+
   testClick(){
-    console.log("Test EventBinding");
+    
   }
 
   testNumberChange(value:number){
