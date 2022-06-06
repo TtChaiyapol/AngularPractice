@@ -1,0 +1,20 @@
+.notification {
+    background-color: red;
+    height: 1.5rem;
+    border-radius: 50%;
+    width: 1.5rem;
+    color: white;
+    text-align: center;
+    padding-top: 0.2em;
+    position: absolute;
+    top: -5px;
+    left: 17px;
+}
+
+.shopping-cart-container {
+    position: relative;
+}
+
+.clickable{
+    cursor: pointer;
+}

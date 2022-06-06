@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './shopping/model/product';
 
 @Component({
   selector: 'app-root',
@@ -59,6 +60,16 @@ export class AppComponent {
     }
   ];
 
+  products : Product[] = [
+    { name: 'Banana' , description: 'ผลไม้' , price : 40},
+    { name: 'Apple' , description: 'ผลไม้' , price : 30},
+    { name: 'Cherry' , description: 'ผลไม้' , price : 50},
+    { name: 'Mango' , description: 'ผลไม้' , price : 100},
+    { name: 'Durian' , description: 'ผลไม้' , price : 150},
+    { name: 'Melon' , description: 'ผลไม้' , price : 120},
+    { name: 'Watermelon' , description: 'ผลไม้' , price : 200}
+  ];
+
   testClick(){
     console.log("Test EventBinding");
   }
@@ -80,5 +91,15 @@ export class AppComponent {
   }
   removeCustomer(index:number){
     this.customerList.splice(index,1);
+  }
+
+  filteredProducts: Product[] = this.products;
+
+  searchProduct(text:string){
+    this.filteredProducts = this.products.filter(product=>{
+      const productName = product.name.toLowerCase();
+      const searchName = text.toLowerCase();
+      return productName.indexOf(searchName)!==-1
+    });
   }
 }

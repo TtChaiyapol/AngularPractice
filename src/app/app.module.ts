@@ -11,6 +11,7 @@ import { TestRequestModule } from './test-request/test-request.module';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import {TableModule} from 'primeng/table';
+import { ShoppingModule } from './shopping/shopping.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {TableModule} from 'primeng/table';
     TestRequestModule,
     InputTextModule,
     FormsModule,
-    TableModule
+    TableModule,
+    ShoppingModule,
     
   ],
   providers: [],
